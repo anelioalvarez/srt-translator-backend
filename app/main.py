@@ -1,8 +1,7 @@
 from fastapi import FastAPI
+from app.routers.translator_router import TranslatorRouter
+
 
 app = FastAPI()
 
-
-@app.get("/")
-async def root():
-    return "Service is working"
+app.include_router(TranslatorRouter)
